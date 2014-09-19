@@ -1,0 +1,38 @@
+<% if @users.any? %>
+<h1>List All Users</h1>
+<% @users.each do |user| %>
+<table>
+<tr>
+<th>
+Name:
+</th>
+<td>
+<%= user.name %>
+
+</td>
+<td>
+<td><%= link_to 'delete', user_path(user),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+</td>
+
+</tr>
+</table>
+<% end %>
+<% end %>
+
+<%#= link_to "Create New User", new_user_path %>
+
+<h1>New User</h1>
+
+<%= form_for :user, url: {:controller => "user", :action => "create"} do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>
+
