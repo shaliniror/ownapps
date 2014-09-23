@@ -14,20 +14,11 @@
 #  timeout: 5000
 
 #Pratip
-#defult: &default
-# adapter: postgresql
-# username: pratip
-# password: root
-# host: 127.0.0.1
-
-production:
-  adapter: mysql2
-  encoding: utf8
-  database: ebdb 
-  username: ebroot 
-  password: sample_root 
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+defult: &default
+ adapter: postgresql
+ username: pratip
+ password: root
+ host: 127.0.0.1
 
 development:
   <<: *default
