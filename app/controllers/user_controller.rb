@@ -2,6 +2,10 @@ class UserController < ApplicationController
 	
 	def index
 		@users = Users.all
+		@hash = Gmaps4rails.build_markers(@users) do |user, marker|
+  			marker.lat user.latitude
+  			marker.lng user.longitude
+		end
 	end
 
 	def create
@@ -19,7 +23,7 @@ class UserController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :address, :latitude, :longitude)
   end
 
 end

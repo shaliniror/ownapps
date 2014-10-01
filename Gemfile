@@ -42,3 +42,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 #gem 'puma'
+
+gem 'geocoder'
+gem 'gmaps4rails'
